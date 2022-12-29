@@ -13,7 +13,7 @@ spec:
     - containerPort: 9090
     args:
     - "cluster-2"
-    - "service-2"
+    - "service-0"
 ---
 kind: Service
 apiVersion: v1
