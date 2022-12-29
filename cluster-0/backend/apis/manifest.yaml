@@ -1,29 +1,29 @@
 kind: Pod
 apiVersion: v1
 metadata:
-  name: foo-app
+  name: mc-api
+  namespace: api
   labels:
-    app: http-echo
+    app: http-api
 spec:
   containers:
-  - name: foo-app
-    image: ealen/echo-server:latest
+  - name: mc-api
+    image: neerajnatu/mc-api:latest
     ports:
-    - containerPort: 80
-    env:
-    - name: PORT
-      value: "80"
+    - containerPort: 9090
+    args:
+    - "cluster-0"
+    - "service-0"
 ---
 kind: Service
 apiVersion: v1
 metadata:
-  name: foo-service
+  name: mc-api
+  namespace: api
 spec:
   type: ClusterIP
   selector:
-    app: http-echo
+    app: http-api
   ports:
   # Default port used by the image
-  - port: 80
-
-
+  - port: 9090

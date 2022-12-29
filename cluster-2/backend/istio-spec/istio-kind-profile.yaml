@@ -39,13 +39,13 @@ spec:
                 port: 15443
                 nodePort: 31371
               - name: http2
-                port: 80
-                targetPort: 80
-                nodePort: 30080
+                port: 9090
+                targetPort: 9090
+                nodePort: 32080
               - name: https
                 port: 443
                 targetPort: 443
-                nodePort: 30443
+                nodePort: 32443
     egressGateways:
     - name: istio-egressgateway
       enabled: false

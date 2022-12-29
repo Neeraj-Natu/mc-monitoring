@@ -10,7 +10,7 @@ spec:
     istio: ingressgateway
   servers:
   - port:
-      number: 80
+      number: 9090
       name: http
       protocol: HTTP
     hosts:
@@ -33,6 +33,6 @@ spec:
         prefix: "/"
     route:
     - destination:
-        host: foo-service.api.svc.cluster.local
+        host: mc-api.api.svc.cluster.local
         port:
-          number: 80
+          number: 9090
