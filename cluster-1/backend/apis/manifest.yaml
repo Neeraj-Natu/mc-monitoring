@@ -1,7 +1,7 @@
 kind: Pod
 apiVersion: v1
 metadata:
-  name: mc-api
+  name: mc-api-cluster-1
   namespace: api
   labels:
     app: http-api
