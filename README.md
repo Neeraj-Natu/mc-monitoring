@@ -28,6 +28,8 @@ k apply -f backend/apis/manifest.yaml
 
 Above setup installs Istio-Ingressgateway as a NodePort service, this is needed as we install k8s on local machine without a network loadbalancer.
 
+---
+
 ## API
 
 The code for api that is deployed in all the three clusters is within the api folder.
