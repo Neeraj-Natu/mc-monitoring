@@ -1,4 +1,4 @@
-FROM golang:1.19.4
+FROM golang:1.20-rc-alpine3.17
 
 # create a working directory inside the image
 RUN mkdir /app
@@ -21,4 +21,4 @@ EXPOSE 9090
 
 # command to be used to execute when the image is used to start a container
 ENTRYPOINT [ "/app/main" ]
-CMD ["cluster-1", "service-1"]
+CMD ["cluster-0", "service-0"]

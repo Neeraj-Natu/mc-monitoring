@@ -20,7 +20,7 @@ go build -o main .
 To build the docker image and run it :
 
 ```
-docker run -p 9090:9090  -d mc-api
+docker run -p 9090:9090  -d mc-api .
 ```
 This should expose the api on port `9090` and have the command-line arguments added as `cluster-1` and `service-1` for the api.
 

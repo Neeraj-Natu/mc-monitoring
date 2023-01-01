@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 )
@@ -22,6 +23,21 @@ func serveHTTP(w http.ResponseWriter, r *http.Request) {
 	Hostname, err := os.Hostname()
 	if err != nil {
 		panic(err)
+	}
+
+	// Logs are not captured in metrics collections, thus nees a separate solution to view these useful business logs.
+	switch cluster {
+	case "cluster-0":
+		log.Println("business logic for cluster-0")
+		log.Println("more business logic..")
+	case "cluster-1":
+		log.Println("business logic for cluster-1")
+		log.Println("more business logic for cluster-1")
+	case "cluster-2":
+		log.Println("business logic for cluster-2")
+		log.Println("nothing more to log for cluster-2")
+	default:
+		log.Println("cluster-names not set at all")
 	}
 
 	var Host = Host{HostName: Hostname, Cluster: cluster, Service: service}
